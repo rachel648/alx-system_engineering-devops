@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
-# displays To infinity and beyond indefinitely.
+# stopped our 4-to_infinity_and_beyond process
+# using ctrl+c in the previous task
 
-while true
-do
- echo "To infinity and beyond"
- sleep 2
-done
+kill "$(pgrep -f 4-to_infinity_and_beyond)"
