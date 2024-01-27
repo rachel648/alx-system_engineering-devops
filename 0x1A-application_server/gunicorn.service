@@ -1,0 +1,14 @@
+[Unit]
+Description=Gunicorn instance to serve AirBnB Flask app
+After=network.target
+
+[Service]
+User=ubuntu
+Group=www-data
+WorkingDirectory=/home/ubuntu/AirBnB_clone_v4
+ExecStart=/home/ubuntu/.local/bin/gunicorn -w 3 -b 0.0.0.0:5003 --error-logfile /tmp/airbnb-error.log --access-logfile /tmp/airbnb-access.log web_dynamic.2-hbnb:app
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
